@@ -1,12 +1,28 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import Dict, Optional
 
-from .request import Request
 from .._models import BaseModel
-from .response import Response
 
-__all__ = ["Execution"]
+__all__ = ["Execution", "Request", "Response"]
+
+
+class Request(BaseModel):
+    headers: Dict[str, str]
+
+    method: str
+
+    url: str
+
+    body: Optional[str] = None
+
+
+class Response(BaseModel):
+    body: str
+
+    headers: Dict[str, str]
+
+    status: int
 
 
 class Execution(BaseModel):
