@@ -2,16 +2,18 @@
 
 from __future__ import annotations
 
-from typing import Dict, Optional
+from typing import Optional
 from typing_extensions import Required, TypedDict
 
-__all__ = ["JobCreateParams", "Request"]
+from .request_param import RequestParam
+
+__all__ = ["JobCreateParams"]
 
 
 class JobCreateParams(TypedDict, total=False):
     execute_at: Required[int]
 
-    request: Required[Request]
+    request: Required[RequestParam]
 
     max_response_bytes: Optional[int]
 
@@ -20,13 +22,3 @@ class JobCreateParams(TypedDict, total=False):
     region: Optional[str]
 
     timeout_ms: Optional[int]
-
-
-class Request(TypedDict, total=False):
-    headers: Required[Dict[str, str]]
-
-    method: Required[str]
-
-    url: Required[str]
-
-    body: Optional[str]

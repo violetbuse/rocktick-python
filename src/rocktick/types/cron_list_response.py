@@ -1,21 +1,12 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Dict, List, Optional
+from typing import List, Optional
 
+from .request import Request
 from .._models import BaseModel
 from .execution import Execution
 
-__all__ = ["CronListResponse", "Request"]
-
-
-class Request(BaseModel):
-    headers: Dict[str, str]
-
-    method: str
-
-    url: str
-
-    body: Optional[str] = None
+__all__ = ["CronListResponse"]
 
 
 class CronListResponse(BaseModel):

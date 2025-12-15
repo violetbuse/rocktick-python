@@ -3,7 +3,7 @@
 Types:
 
 ```python
-from rocktick.types import CronJob, CronListResponse
+from rocktick.types import CronJob, Request, CronListResponse
 ```
 
 Methods:
@@ -18,7 +18,7 @@ Methods:
 Types:
 
 ```python
-from rocktick.types import Execution, ExecutionListResponse
+from rocktick.types import Execution, Response, ExecutionListResponse
 ```
 
 Methods:
