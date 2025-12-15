@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Optional
 from typing_extensions import TypedDict
 
-from .request_param import RequestParam
+from .http_request_param import HTTPRequestParam
 
 __all__ = ["JobUpdateParams"]
 
@@ -19,6 +19,6 @@ class JobUpdateParams(TypedDict, total=False):
 
     region: Optional[str]
 
-    request: Optional[RequestParam]
+    request: Optional[HTTPRequestParam]
 
     timeout_ms: Optional[int]

@@ -2,9 +2,9 @@
 
 from typing import List, Optional
 
-from .request import Request
 from .._models import BaseModel
 from .execution import Execution
+from .http_request import HTTPRequest
 
 __all__ = ["CronJob"]
 
@@ -18,7 +18,7 @@ class CronJob(BaseModel):
 
     region: str
 
-    request: Request
+    request: HTTPRequest
 
     schedule: str
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.5.0 (2025-12-15)
+
+Full Changelog: [v0.1.20...v0.5.0](https://github.com/violetbuse/rocktick-python/compare/v0.1.20...v0.5.0)
+
+### Features
+
+* **api:** api update ([3d65476](https://github.com/violetbuse/rocktick-python/commit/3d65476589efb45ddb0c7f2f16b46556e16bf225))
+* **api:** changed models request and response to HttpRequest and HttpResponse ([3e324fc](https://github.com/violetbuse/rocktick-python/commit/3e324fc29ddf07766f1f6c4401f08eca2c721e67))
+
+
+### Bug Fixes
+
+* **api:** changed names also to http_request and http_response ([4d59cf9](https://github.com/violetbuse/rocktick-python/commit/4d59cf92fe5890f9a171c9b1a5706d5873d5d48f))
+
 ## 0.1.20 (2025-12-14)
 
 Full Changelog: [v0.0.1...v0.1.20](https://github.com/violetbuse/rocktick-python/compare/v0.0.1...v0.1.20)
