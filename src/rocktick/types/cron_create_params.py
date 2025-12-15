@@ -5,13 +5,13 @@ from __future__ import annotations
 from typing import Optional
 from typing_extensions import Required, TypedDict
 
-from .request_param import RequestParam
+from .http_request_param import HTTPRequestParam
 
 __all__ = ["CronCreateParams"]
 
 
 class CronCreateParams(TypedDict, total=False):
-    request: Required[RequestParam]
+    request: Required[HTTPRequestParam]
 
     schedule: Required[str]
 
