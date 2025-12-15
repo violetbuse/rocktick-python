@@ -20,6 +20,7 @@ from .._response import (
 from ..pagination import SyncCursorPage, AsyncCursorPage
 from .._base_client import AsyncPaginator, make_request_options
 from ..types.cron_job import CronJob
+from ..types.request_param import RequestParam
 from ..types.cron_list_response import CronListResponse
 
 __all__ = ["CronResource", "AsyncCronResource"]
@@ -48,7 +49,7 @@ class CronResource(SyncAPIResource):
     def create(
         self,
         *,
-        request: cron_create_params.Request,
+        request: RequestParam,
         schedule: str,
         max_response_bytes: Optional[int] | Omit = omit,
         max_retries: Optional[int] | Omit = omit,
@@ -128,7 +129,7 @@ class CronResource(SyncAPIResource):
         max_response_bytes: Optional[int] | Omit = omit,
         max_retries: Optional[int] | Omit = omit,
         region: Optional[str] | Omit = omit,
-        request: Optional[cron_update_params.Request] | Omit = omit,
+        request: Optional[RequestParam] | Omit = omit,
         schedule: Optional[str] | Omit = omit,
         timeout_ms: Optional[int] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -234,7 +235,7 @@ class AsyncCronResource(AsyncAPIResource):
     async def create(
         self,
         *,
-        request: cron_create_params.Request,
+        request: RequestParam,
         schedule: str,
         max_response_bytes: Optional[int] | Omit = omit,
         max_retries: Optional[int] | Omit = omit,
@@ -314,7 +315,7 @@ class AsyncCronResource(AsyncAPIResource):
         max_response_bytes: Optional[int] | Omit = omit,
         max_retries: Optional[int] | Omit = omit,
         region: Optional[str] | Omit = omit,
-        request: Optional[cron_update_params.Request] | Omit = omit,
+        request: Optional[RequestParam] | Omit = omit,
         schedule: Optional[str] | Omit = omit,
         timeout_ms: Optional[int] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.

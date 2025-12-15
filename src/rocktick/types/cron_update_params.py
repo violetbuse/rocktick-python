@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
-from typing import Dict, Optional
-from typing_extensions import Required, TypedDict
+from typing import Optional
+from typing_extensions import TypedDict
 
-__all__ = ["CronUpdateParams", "Request"]
+from .request_param import RequestParam
+
+__all__ = ["CronUpdateParams"]
 
 
 class CronUpdateParams(TypedDict, total=False):
@@ -15,18 +17,8 @@ class CronUpdateParams(TypedDict, total=False):
 
     region: Optional[str]
 
-    request: Optional[Request]
+    request: Optional[RequestParam]
 
     schedule: Optional[str]
 
     timeout_ms: Optional[int]
-
-
-class Request(TypedDict, total=False):
-    headers: Required[Dict[str, str]]
-
-    method: Required[str]
-
-    url: Required[str]
-
-    body: Optional[str]
