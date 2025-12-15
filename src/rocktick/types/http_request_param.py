@@ -5,10 +5,10 @@ from __future__ import annotations
 from typing import Dict, Optional
 from typing_extensions import Required, TypedDict
 
-__all__ = ["RequestParam"]
+__all__ = ["HTTPRequestParam"]
 
 
-class RequestParam(TypedDict, total=False):
+class HTTPRequestParam(TypedDict, total=False):
     headers: Required[Dict[str, str]]
 
     method: Required[str]

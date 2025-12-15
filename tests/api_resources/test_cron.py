@@ -9,7 +9,10 @@ import pytest
 
 from rocktick import Rocktick, AsyncRocktick
 from tests.utils import assert_matches_type
-from rocktick.types import CronJob, CronListResponse
+from rocktick.types import (
+    CronJob,
+    CronListResponse,
+)
 from rocktick.pagination import SyncCursorPage, AsyncCursorPage
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")

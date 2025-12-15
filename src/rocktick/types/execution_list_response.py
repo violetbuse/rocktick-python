@@ -2,9 +2,9 @@
 
 from typing import Optional
 
-from .request import Request
 from .._models import BaseModel
-from .response import Response
+from .http_request import HTTPRequest
+from .http_response import HTTPResponse
 
 __all__ = ["ExecutionListResponse"]
 
@@ -16,7 +16,7 @@ class ExecutionListResponse(BaseModel):
 
     region: str
 
-    request: Request
+    request: HTTPRequest
 
     scheduled_at: int
 
@@ -28,7 +28,7 @@ class ExecutionListResponse(BaseModel):
 
     one_off_job_id: Optional[str] = None
 
-    response: Optional[Response] = None
+    response: Optional[HTTPResponse] = None
 
     response_error: Optional[str] = None
 
