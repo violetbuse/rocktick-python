@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.6.0 (2025-12-17)
+
+Full Changelog: [v0.5.0...v0.6.0](https://github.com/violetbuse/rocktick-python/compare/v0.5.0...v0.6.0)
+
+### Features
+
+* **api:** added tenant id to client settings ([fa64303](https://github.com/violetbuse/rocktick-python/commit/fa643031303e769f122bfeeb82c145f2bdec720c))
+
+
+### Chores
+
+* **internal:** add missing files argument to base client ([1dcd778](https://github.com/violetbuse/rocktick-python/commit/1dcd778d7d9c168ae6794bf596ed339691633e9c))
+* speedup initial import ([fa0591d](https://github.com/violetbuse/rocktick-python/commit/fa0591da49172b00e4141cd5e852fc7f27faa1cc))
+
+
+### Refactors
+
+* **internal:** switch from rye to uv ([c418694](https://github.com/violetbuse/rocktick-python/commit/c418694f535c76300a4cb4a6a75d9f0c9ca70dfa))
+
 ## 0.5.0 (2025-12-15)
 
 Full Changelog: [v0.1.20...v0.5.0](https://github.com/violetbuse/rocktick-python/compare/v0.1.20...v0.5.0)
