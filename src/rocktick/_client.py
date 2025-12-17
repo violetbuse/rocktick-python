@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Dict, Mapping, cast
+from typing import TYPE_CHECKING, Any, Dict, Mapping, cast
 from typing_extensions import Self, Literal, override
 
 import httpx
@@ -20,8 +20,8 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
-from .resources import cron, jobs, verify, tenants, executions
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import RocktickError, APIStatusError
 from ._base_client import (
@@ -29,6 +29,14 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
+
+if TYPE_CHECKING:
+    from .resources import cron, jobs, verify, tenants, executions
+    from .resources.cron import CronResource, AsyncCronResource
+    from .resources.jobs import JobsResource, AsyncJobsResource
+    from .resources.verify import VerifyResource, AsyncVerifyResource
+    from .resources.tenants import TenantsResource, AsyncTenantsResource
+    from .resources.executions import ExecutionsResource, AsyncExecutionsResource
 
 __all__ = [
     "ENVIRONMENTS",
@@ -49,14 +57,6 @@ ENVIRONMENTS: Dict[str, str] = {
 
 
 class Rocktick(SyncAPIClient):
-    cron: cron.CronResource
-    executions: executions.ExecutionsResource
-    jobs: jobs.JobsResource
-    tenants: tenants.TenantsResource
-    verify: verify.VerifyResource
-    with_raw_response: RocktickWithRawResponse
-    with_streaming_response: RocktickWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -135,13 +135,43 @@ class Rocktick(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.cron = cron.CronResource(self)
-        self.executions = executions.ExecutionsResource(self)
-        self.jobs = jobs.JobsResource(self)
-        self.tenants = tenants.TenantsResource(self)
-        self.verify = verify.VerifyResource(self)
-        self.with_raw_response = RocktickWithRawResponse(self)
-        self.with_streaming_response = RocktickWithStreamedResponse(self)
+    @cached_property
+    def cron(self) -> CronResource:
+        from .resources.cron import CronResource
+
+        return CronResource(self)
+
+    @cached_property
+    def executions(self) -> ExecutionsResource:
+        from .resources.executions import ExecutionsResource
+
+        return ExecutionsResource(self)
+
+    @cached_property
+    def jobs(self) -> JobsResource:
+        from .resources.jobs import JobsResource
+
+        return JobsResource(self)
+
+    @cached_property
+    def tenants(self) -> TenantsResource:
+        from .resources.tenants import TenantsResource
+
+        return TenantsResource(self)
+
+    @cached_property
+    def verify(self) -> VerifyResource:
+        from .resources.verify import VerifyResource
+
+        return VerifyResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> RocktickWithRawResponse:
+        return RocktickWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> RocktickWithStreamedResponse:
+        return RocktickWithStreamedResponse(self)
 
     @property
     @override
@@ -251,14 +281,6 @@ class Rocktick(SyncAPIClient):
 
 
 class AsyncRocktick(AsyncAPIClient):
-    cron: cron.AsyncCronResource
-    executions: executions.AsyncExecutionsResource
-    jobs: jobs.AsyncJobsResource
-    tenants: tenants.AsyncTenantsResource
-    verify: verify.AsyncVerifyResource
-    with_raw_response: AsyncRocktickWithRawResponse
-    with_streaming_response: AsyncRocktickWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -337,13 +359,43 @@ class AsyncRocktick(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.cron = cron.AsyncCronResource(self)
-        self.executions = executions.AsyncExecutionsResource(self)
-        self.jobs = jobs.AsyncJobsResource(self)
-        self.tenants = tenants.AsyncTenantsResource(self)
-        self.verify = verify.AsyncVerifyResource(self)
-        self.with_raw_response = AsyncRocktickWithRawResponse(self)
-        self.with_streaming_response = AsyncRocktickWithStreamedResponse(self)
+    @cached_property
+    def cron(self) -> AsyncCronResource:
+        from .resources.cron import AsyncCronResource
+
+        return AsyncCronResource(self)
+
+    @cached_property
+    def executions(self) -> AsyncExecutionsResource:
+        from .resources.executions import AsyncExecutionsResource
+
+        return AsyncExecutionsResource(self)
+
+    @cached_property
+    def jobs(self) -> AsyncJobsResource:
+        from .resources.jobs import AsyncJobsResource
+
+        return AsyncJobsResource(self)
+
+    @cached_property
+    def tenants(self) -> AsyncTenantsResource:
+        from .resources.tenants import AsyncTenantsResource
+
+        return AsyncTenantsResource(self)
+
+    @cached_property
+    def verify(self) -> AsyncVerifyResource:
+        from .resources.verify import AsyncVerifyResource
+
+        return AsyncVerifyResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncRocktickWithRawResponse:
+        return AsyncRocktickWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncRocktickWithStreamedResponse:
+        return AsyncRocktickWithStreamedResponse(self)
 
     @property
     @override
@@ -453,39 +505,151 @@ class AsyncRocktick(AsyncAPIClient):
 
 
 class RocktickWithRawResponse:
+    _client: Rocktick
+
     def __init__(self, client: Rocktick) -> None:
-        self.cron = cron.CronResourceWithRawResponse(client.cron)
-        self.executions = executions.ExecutionsResourceWithRawResponse(client.executions)
-        self.jobs = jobs.JobsResourceWithRawResponse(client.jobs)
-        self.tenants = tenants.TenantsResourceWithRawResponse(client.tenants)
-        self.verify = verify.VerifyResourceWithRawResponse(client.verify)
+        self._client = client
+
+    @cached_property
+    def cron(self) -> cron.CronResourceWithRawResponse:
+        from .resources.cron import CronResourceWithRawResponse
+
+        return CronResourceWithRawResponse(self._client.cron)
+
+    @cached_property
+    def executions(self) -> executions.ExecutionsResourceWithRawResponse:
+        from .resources.executions import ExecutionsResourceWithRawResponse
+
+        return ExecutionsResourceWithRawResponse(self._client.executions)
+
+    @cached_property
+    def jobs(self) -> jobs.JobsResourceWithRawResponse:
+        from .resources.jobs import JobsResourceWithRawResponse
+
+        return JobsResourceWithRawResponse(self._client.jobs)
+
+    @cached_property
+    def tenants(self) -> tenants.TenantsResourceWithRawResponse:
+        from .resources.tenants import TenantsResourceWithRawResponse
+
+        return TenantsResourceWithRawResponse(self._client.tenants)
+
+    @cached_property
+    def verify(self) -> verify.VerifyResourceWithRawResponse:
+        from .resources.verify import VerifyResourceWithRawResponse
+
+        return VerifyResourceWithRawResponse(self._client.verify)
 
 
 class AsyncRocktickWithRawResponse:
+    _client: AsyncRocktick
+
     def __init__(self, client: AsyncRocktick) -> None:
-        self.cron = cron.AsyncCronResourceWithRawResponse(client.cron)
-        self.executions = executions.AsyncExecutionsResourceWithRawResponse(client.executions)
-        self.jobs = jobs.AsyncJobsResourceWithRawResponse(client.jobs)
-        self.tenants = tenants.AsyncTenantsResourceWithRawResponse(client.tenants)
-        self.verify = verify.AsyncVerifyResourceWithRawResponse(client.verify)
+        self._client = client
+
+    @cached_property
+    def cron(self) -> cron.AsyncCronResourceWithRawResponse:
+        from .resources.cron import AsyncCronResourceWithRawResponse
+
+        return AsyncCronResourceWithRawResponse(self._client.cron)
+
+    @cached_property
+    def executions(self) -> executions.AsyncExecutionsResourceWithRawResponse:
+        from .resources.executions import AsyncExecutionsResourceWithRawResponse
+
+        return AsyncExecutionsResourceWithRawResponse(self._client.executions)
+
+    @cached_property
+    def jobs(self) -> jobs.AsyncJobsResourceWithRawResponse:
+        from .resources.jobs import AsyncJobsResourceWithRawResponse
+
+        return AsyncJobsResourceWithRawResponse(self._client.jobs)
+
+    @cached_property
+    def tenants(self) -> tenants.AsyncTenantsResourceWithRawResponse:
+        from .resources.tenants import AsyncTenantsResourceWithRawResponse
+
+        return AsyncTenantsResourceWithRawResponse(self._client.tenants)
+
+    @cached_property
+    def verify(self) -> verify.AsyncVerifyResourceWithRawResponse:
+        from .resources.verify import AsyncVerifyResourceWithRawResponse
+
+        return AsyncVerifyResourceWithRawResponse(self._client.verify)
 
 
 class RocktickWithStreamedResponse:
+    _client: Rocktick
+
     def __init__(self, client: Rocktick) -> None:
-        self.cron = cron.CronResourceWithStreamingResponse(client.cron)
-        self.executions = executions.ExecutionsResourceWithStreamingResponse(client.executions)
-        self.jobs = jobs.JobsResourceWithStreamingResponse(client.jobs)
-        self.tenants = tenants.TenantsResourceWithStreamingResponse(client.tenants)
-        self.verify = verify.VerifyResourceWithStreamingResponse(client.verify)
+        self._client = client
+
+    @cached_property
+    def cron(self) -> cron.CronResourceWithStreamingResponse:
+        from .resources.cron import CronResourceWithStreamingResponse
+
+        return CronResourceWithStreamingResponse(self._client.cron)
+
+    @cached_property
+    def executions(self) -> executions.ExecutionsResourceWithStreamingResponse:
+        from .resources.executions import ExecutionsResourceWithStreamingResponse
+
+        return ExecutionsResourceWithStreamingResponse(self._client.executions)
+
+    @cached_property
+    def jobs(self) -> jobs.JobsResourceWithStreamingResponse:
+        from .resources.jobs import JobsResourceWithStreamingResponse
+
+        return JobsResourceWithStreamingResponse(self._client.jobs)
+
+    @cached_property
+    def tenants(self) -> tenants.TenantsResourceWithStreamingResponse:
+        from .resources.tenants import TenantsResourceWithStreamingResponse
+
+        return TenantsResourceWithStreamingResponse(self._client.tenants)
+
+    @cached_property
+    def verify(self) -> verify.VerifyResourceWithStreamingResponse:
+        from .resources.verify import VerifyResourceWithStreamingResponse
+
+        return VerifyResourceWithStreamingResponse(self._client.verify)
 
 
 class AsyncRocktickWithStreamedResponse:
+    _client: AsyncRocktick
+
     def __init__(self, client: AsyncRocktick) -> None:
-        self.cron = cron.AsyncCronResourceWithStreamingResponse(client.cron)
-        self.executions = executions.AsyncExecutionsResourceWithStreamingResponse(client.executions)
-        self.jobs = jobs.AsyncJobsResourceWithStreamingResponse(client.jobs)
-        self.tenants = tenants.AsyncTenantsResourceWithStreamingResponse(client.tenants)
-        self.verify = verify.AsyncVerifyResourceWithStreamingResponse(client.verify)
+        self._client = client
+
+    @cached_property
+    def cron(self) -> cron.AsyncCronResourceWithStreamingResponse:
+        from .resources.cron import AsyncCronResourceWithStreamingResponse
+
+        return AsyncCronResourceWithStreamingResponse(self._client.cron)
+
+    @cached_property
+    def executions(self) -> executions.AsyncExecutionsResourceWithStreamingResponse:
+        from .resources.executions import AsyncExecutionsResourceWithStreamingResponse
+
+        return AsyncExecutionsResourceWithStreamingResponse(self._client.executions)
+
+    @cached_property
+    def jobs(self) -> jobs.AsyncJobsResourceWithStreamingResponse:
+        from .resources.jobs import AsyncJobsResourceWithStreamingResponse
+
+        return AsyncJobsResourceWithStreamingResponse(self._client.jobs)
+
+    @cached_property
+    def tenants(self) -> tenants.AsyncTenantsResourceWithStreamingResponse:
+        from .resources.tenants import AsyncTenantsResourceWithStreamingResponse
+
+        return AsyncTenantsResourceWithStreamingResponse(self._client.tenants)
+
+    @cached_property
+    def verify(self) -> verify.AsyncVerifyResourceWithStreamingResponse:
+        from .resources.verify import AsyncVerifyResourceWithStreamingResponse
+
+        return AsyncVerifyResourceWithStreamingResponse(self._client.verify)
 
 
 Client = Rocktick
