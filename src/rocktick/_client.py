@@ -59,6 +59,7 @@ ENVIRONMENTS: Dict[str, str] = {
 class Rocktick(SyncAPIClient):
     # client options
     api_key: str
+    tenant_id: str | None
 
     _environment: Literal["production", "local"] | NotGiven
 
@@ -66,6 +67,7 @@ class Rocktick(SyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        tenant_id: str | None = None,
         environment: Literal["production", "local"] | NotGiven = not_given,
         base_url: str | httpx.URL | None | NotGiven = not_given,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -97,6 +99,8 @@ class Rocktick(SyncAPIClient):
                 "The api_key client option must be set either by passing api_key to the client or by setting the ROCKTICK_API_KEY environment variable"
             )
         self.api_key = api_key
+
+        self.tenant_id = tenant_id
 
         self._environment = environment
 
@@ -190,6 +194,7 @@ class Rocktick(SyncAPIClient):
         return {
             **super().default_headers,
             "X-Stainless-Async": "false",
+            "Tenant-Id": self.tenant_id if self.tenant_id is not None else Omit(),
             **self._custom_headers,
         }
 
@@ -197,6 +202,7 @@ class Rocktick(SyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        tenant_id: str | None = None,
         environment: Literal["production", "local"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -232,6 +238,7 @@ class Rocktick(SyncAPIClient):
         http_client = http_client or self._client
         return self.__class__(
             api_key=api_key or self.api_key,
+            tenant_id=tenant_id or self.tenant_id,
             base_url=base_url or self.base_url,
             environment=environment or self._environment,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
@@ -283,6 +290,7 @@ class Rocktick(SyncAPIClient):
 class AsyncRocktick(AsyncAPIClient):
     # client options
     api_key: str
+    tenant_id: str | None
 
     _environment: Literal["production", "local"] | NotGiven
 
@@ -290,6 +298,7 @@ class AsyncRocktick(AsyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        tenant_id: str | None = None,
         environment: Literal["production", "local"] | NotGiven = not_given,
         base_url: str | httpx.URL | None | NotGiven = not_given,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -321,6 +330,8 @@ class AsyncRocktick(AsyncAPIClient):
                 "The api_key client option must be set either by passing api_key to the client or by setting the ROCKTICK_API_KEY environment variable"
             )
         self.api_key = api_key
+
+        self.tenant_id = tenant_id
 
         self._environment = environment
 
@@ -414,6 +425,7 @@ class AsyncRocktick(AsyncAPIClient):
         return {
             **super().default_headers,
             "X-Stainless-Async": f"async:{get_async_library()}",
+            "Tenant-Id": self.tenant_id if self.tenant_id is not None else Omit(),
             **self._custom_headers,
         }
 
@@ -421,6 +433,7 @@ class AsyncRocktick(AsyncAPIClient):
         self,
         *,
         api_key: str | None = None,
+        tenant_id: str | None = None,
         environment: Literal["production", "local"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = not_given,
@@ -456,6 +469,7 @@ class AsyncRocktick(AsyncAPIClient):
         http_client = http_client or self._client
         return self.__class__(
             api_key=api_key or self.api_key,
+            tenant_id=tenant_id or self.tenant_id,
             base_url=base_url or self.base_url,
             environment=environment or self._environment,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
