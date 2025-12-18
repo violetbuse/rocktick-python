@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.1 (2025-12-18)
+
+Full Changelog: [v0.6.0...v0.6.1](https://github.com/violetbuse/rocktick-python/compare/v0.6.0...v0.6.1)
+
+### Bug Fixes
+
+* use async_to_httpx_files in patch method ([2ea8b77](https://github.com/violetbuse/rocktick-python/commit/2ea8b77688fa9c92403a4190f338f34de81759d2))
+
 ## 0.6.0 (2025-12-17)
 
 Full Changelog: [v0.5.0...v0.6.0](https://github.com/violetbuse/rocktick-python/compare/v0.5.0...v0.6.0)
