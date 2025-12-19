@@ -51,7 +51,7 @@ __all__ = [
 ]
 
 ENVIRONMENTS: Dict[str, str] = {
-    "production": "https://rocktick.com",
+    "production": "https://cloud.rocktick.com",
     "local": "http://localhost:9090",
 }
 
