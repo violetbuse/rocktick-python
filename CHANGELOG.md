@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 (2025-12-19)
+
+Full Changelog: [v0.6.2...v0.7.0](https://github.com/violetbuse/rocktick-python/compare/v0.6.2...v0.7.0)
+
+### Features
+
+* **api:** changed production from rocktick.com to cloud.rocktick.com ([0cf7b52](https://github.com/violetbuse/rocktick-python/commit/0cf7b52c43101e1bc152d93a356b2babf28ca7f5))
+
 ## 0.6.2 (2025-12-19)
 
 Full Changelog: [v0.6.1...v0.6.2](https://github.com/violetbuse/rocktick-python/compare/v0.6.1...v0.6.2)
