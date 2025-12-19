@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.2 (2025-12-19)
+
+Full Changelog: [v0.6.1...v0.6.2](https://github.com/violetbuse/rocktick-python/compare/v0.6.1...v0.6.2)
+
+### Chores
+
+* **internal:** add `--fix` argument to lint script ([c80825f](https://github.com/violetbuse/rocktick-python/commit/c80825f199e8fa9210b54ed2c0881a4396db1620))
+
 ## 0.6.1 (2025-12-18)
 
 Full Changelog: [v0.6.0...v0.6.1](https://github.com/violetbuse/rocktick-python/compare/v0.6.0...v0.6.1)
