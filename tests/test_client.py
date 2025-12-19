@@ -574,7 +574,7 @@ class TestRocktick:
             client = Rocktick(
                 base_url=None, api_key=api_key, _strict_response_validation=True, environment="production"
             )
-            assert str(client.base_url).startswith("https://rocktick.com")
+            assert str(client.base_url).startswith("https://cloud.rocktick.com")
 
             client.close()
 
@@ -1390,7 +1390,7 @@ class TestAsyncRocktick:
             client = AsyncRocktick(
                 base_url=None, api_key=api_key, _strict_response_validation=True, environment="production"
             )
-            assert str(client.base_url).startswith("https://rocktick.com")
+            assert str(client.base_url).startswith("https://cloud.rocktick.com")
 
             await client.close()
 
