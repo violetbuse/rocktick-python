@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.1 (2026-01-06)
+
+Full Changelog: [v0.7.0...v0.7.1](https://github.com/violetbuse/rocktick-python/compare/v0.7.0...v0.7.1)
+
+### Chores
+
+* **internal:** codegen related update ([90dc336](https://github.com/violetbuse/rocktick-python/commit/90dc33628b0d6a025e8feeafc089db22399923a7))
+
 ## 0.7.0 (2025-12-19)
 
 Full Changelog: [v0.6.2...v0.7.0](https://github.com/violetbuse/rocktick-python/compare/v0.6.2...v0.7.0)
