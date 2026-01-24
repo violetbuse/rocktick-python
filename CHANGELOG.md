@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.1 (2026-01-24)
+
+Full Changelog: [v0.8.0...v0.8.1](https://github.com/violetbuse/rocktick-python/compare/v0.8.0...v0.8.1)
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([251e639](https://github.com/violetbuse/rocktick-python/commit/251e639486fe301a2675b4749ef32e938cf7ab03))
+* **internal:** update `actions/checkout` version ([763a093](https://github.com/violetbuse/rocktick-python/commit/763a093fb351848416f01fb0b9e300a40ea73692))
+
 ## 0.8.0 (2026-01-14)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/violetbuse/rocktick-python/compare/v0.7.0...v0.8.0)
