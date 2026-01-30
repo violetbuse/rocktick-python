@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.9.0 (2026-01-30)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/violetbuse/rocktick-python/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* **client:** add custom JSON encoder for extended type support ([8d66182](https://github.com/violetbuse/rocktick-python/commit/8d661822ece182a5fa0b4c7e383405b7b96fd992))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([251e639](https://github.com/violetbuse/rocktick-python/commit/251e639486fe301a2675b4749ef32e938cf7ab03))
+* **internal:** update `actions/checkout` version ([763a093](https://github.com/violetbuse/rocktick-python/commit/763a093fb351848416f01fb0b9e300a40ea73692))
+
 ## 0.8.0 (2026-01-14)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/violetbuse/rocktick-python/compare/v0.7.0...v0.8.0)
