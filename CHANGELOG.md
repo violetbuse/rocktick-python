@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.2 (2026-03-17)
+
+Full Changelog: [v0.9.1...v0.9.2](https://github.com/violetbuse/rocktick-python/compare/v0.9.1...v0.9.2)
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([2c1bf5b](https://github.com/violetbuse/rocktick-python/commit/2c1bf5b0253919984abe475299719390aa2b54b6))
+
 ## 0.9.1 (2026-03-17)
 
 Full Changelog: [v0.9.0...v0.9.1](https://github.com/violetbuse/rocktick-python/compare/v0.9.0...v0.9.1)
