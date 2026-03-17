@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.9.1 (2026-03-17)
+
+Full Changelog: [v0.9.0...v0.9.1](https://github.com/violetbuse/rocktick-python/compare/v0.9.0...v0.9.1)
+
+### Bug Fixes
+
+* **pydantic:** do not pass `by_alias` unless set ([374658b](https://github.com/violetbuse/rocktick-python/commit/374658bb78baf34590bd5a797738a389bf8ff90a))
+
+
+### Chores
+
+* **ci:** bump uv version ([e6bd1af](https://github.com/violetbuse/rocktick-python/commit/e6bd1afcc31ec8b4eee05183e26f83f392205238))
+* **ci:** skip uploading artifacts on stainless-internal branches ([eb8b5f9](https://github.com/violetbuse/rocktick-python/commit/eb8b5f9b8a137cea1d4641052f9639bdaf50b77c))
+* format all `api.md` files ([1a024e5](https://github.com/violetbuse/rocktick-python/commit/1a024e53c6719ca8223494a3516f31a2f9f796a3))
+* **internal:** add request options to SSE classes ([62779c7](https://github.com/violetbuse/rocktick-python/commit/62779c7ab3d3fc50ef13426b64a80fc90c77669c))
+* **internal:** bump dependencies ([d4f5cfb](https://github.com/violetbuse/rocktick-python/commit/d4f5cfb6d308400f76a694a0ef2609ec97363f60))
+* **internal:** fix lint error on Python 3.14 ([7520614](https://github.com/violetbuse/rocktick-python/commit/7520614632b527f45e04d960e9c1bf138a859ce1))
+* **internal:** make `test_proxy_environment_variables` more resilient ([47d36b9](https://github.com/violetbuse/rocktick-python/commit/47d36b9edb9916aa205a4281bb20b3af111e4c96))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([57a7b7b](https://github.com/violetbuse/rocktick-python/commit/57a7b7b9621b4f4921d281194191e8c00dad8fc2))
+* **internal:** remove mock server code ([ad94b3d](https://github.com/violetbuse/rocktick-python/commit/ad94b3dcb480420c5fb8d1fd988d6d3ab1840f81))
+* update mock server docs ([0c642ee](https://github.com/violetbuse/rocktick-python/commit/0c642ee29d48ad8c0f023d77e630bb55038571b3))
+
 ## 0.9.0 (2026-01-30)
 
 Full Changelog: [v0.8.0...v0.9.0](https://github.com/violetbuse/rocktick-python/compare/v0.8.0...v0.9.0)
