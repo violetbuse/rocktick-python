@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.3 (2026-03-20)
+
+Full Changelog: [v0.9.2...v0.9.3](https://github.com/violetbuse/rocktick-python/compare/v0.9.2...v0.9.3)
+
+### Bug Fixes
+
+* sanitize endpoint path params ([e9650c3](https://github.com/violetbuse/rocktick-python/commit/e9650c327e305cd02be52b5636bf792b449ec13f))
+
+
+### Chores
+
+* **internal:** tweak CI branches ([c672607](https://github.com/violetbuse/rocktick-python/commit/c6726077865957b1ab38e17f1f059803fabcc10a))
+
 ## 0.9.2 (2026-03-17)
 
 Full Changelog: [v0.9.1...v0.9.2](https://github.com/violetbuse/rocktick-python/compare/v0.9.1...v0.9.2)
