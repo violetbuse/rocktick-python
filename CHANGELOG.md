@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.10.0 (2026-03-27)
+
+Full Changelog: [v0.9.3...v0.10.0](https://github.com/violetbuse/rocktick-python/compare/v0.9.3...v0.10.0)
+
+### Features
+
+* **internal:** implement indices array format for query and form serialization ([e2f1b61](https://github.com/violetbuse/rocktick-python/commit/e2f1b61fe0e45af5cb9f8f05e7165ae6408190a1))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([69b4454](https://github.com/violetbuse/rocktick-python/commit/69b4454f924b57eaeef578225ebe67b2b68f231f))
+* **internal:** update gitignore ([4ed79fa](https://github.com/violetbuse/rocktick-python/commit/4ed79fad681dbf165bc844d553ed11821878c7a7))
+
 ## 0.9.3 (2026-03-20)
 
 Full Changelog: [v0.9.2...v0.9.3](https://github.com/violetbuse/rocktick-python/compare/v0.9.2...v0.9.3)
