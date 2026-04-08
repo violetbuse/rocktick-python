@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.1 (2026-04-08)
+
+Full Changelog: [v0.10.0...v0.10.1](https://github.com/violetbuse/rocktick-python/compare/v0.10.0...v0.10.1)
+
+### Bug Fixes
+
+* **client:** preserve hardcoded query params when merging with user params ([add3377](https://github.com/violetbuse/rocktick-python/commit/add337704d13eee1481c1eeaf305b4d172251550))
+
 ## 0.10.0 (2026-03-27)
 
 Full Changelog: [v0.9.3...v0.10.0](https://github.com/violetbuse/rocktick-python/compare/v0.9.3...v0.10.0)
