@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.2 (2026-04-11)
+
+Full Changelog: [v0.10.1...v0.10.2](https://github.com/violetbuse/rocktick-python/compare/v0.10.1...v0.10.2)
+
+### Bug Fixes
+
+* ensure file data are only sent as 1 parameter ([ba25380](https://github.com/violetbuse/rocktick-python/commit/ba25380673f55826e4b38a77de16aa5367f46153))
+
 ## 0.10.1 (2026-04-08)
 
 Full Changelog: [v0.10.0...v0.10.1](https://github.com/violetbuse/rocktick-python/compare/v0.10.0...v0.10.1)
