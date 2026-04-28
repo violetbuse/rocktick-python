@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.11.0 (2026-04-28)
+
+Full Changelog: [v0.10.2...v0.11.0](https://github.com/violetbuse/rocktick-python/compare/v0.10.2...v0.11.0)
+
+### Features
+
+* support setting headers via env ([1b80724](https://github.com/violetbuse/rocktick-python/commit/1b80724a009eb3608d36b979f34f97ec40b3331f))
+
+
+### Bug Fixes
+
+* use correct field name format for multipart file arrays ([dc33926](https://github.com/violetbuse/rocktick-python/commit/dc3392680008548b2826d8da0d8e12ce7178064c))
+
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([5953fdd](https://github.com/violetbuse/rocktick-python/commit/5953fddc7b1bf57c2e6e832d7c669784bc9af59c))
+
+
+### Chores
+
+* **internal:** more robust bootstrap script ([818578e](https://github.com/violetbuse/rocktick-python/commit/818578e0ef15f94239c6a70cea1be2642b6587cf))
+
 ## 0.10.2 (2026-04-11)
 
 Full Changelog: [v0.10.1...v0.10.2](https://github.com/violetbuse/rocktick-python/compare/v0.10.1...v0.10.2)
