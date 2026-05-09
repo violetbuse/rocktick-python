@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.11.1 (2026-05-09)
+
+Full Changelog: [v0.11.0...v0.11.1](https://github.com/violetbuse/rocktick-python/compare/v0.11.0...v0.11.1)
+
+### Bug Fixes
+
+* **client:** add missing f-string prefix in file type error message ([8e93242](https://github.com/violetbuse/rocktick-python/commit/8e93242b4397f75c38d428ade402522acd038454))
+
+
+### Chores
+
+* **internal:** reformat pyproject.toml ([0813736](https://github.com/violetbuse/rocktick-python/commit/0813736703a31c92e5183c0f19bec69740252fbc))
+
 ## 0.11.0 (2026-04-28)
 
 Full Changelog: [v0.10.2...v0.11.0](https://github.com/violetbuse/rocktick-python/compare/v0.10.2...v0.11.0)
