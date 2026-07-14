@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.1 (2026-07-14)
+
+Full Changelog: [v0.12.0...v0.12.1](https://github.com/violetbuse/rocktick-python/compare/v0.12.0...v0.12.1)
+
+### Bug Fixes
+
+* **internal:** resolve build failures ([e2a776c](https://github.com/violetbuse/rocktick-python/commit/e2a776c131e193181d44bb51800565d3c5ec7b01))
+
 ## 0.12.0 (2026-05-12)
 
 Full Changelog: [v0.11.1...v0.12.0](https://github.com/violetbuse/rocktick-python/compare/v0.11.1...v0.12.0)
