@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.0 (2026-07-18)
+
+Full Changelog: [v0.12.1...v0.13.0](https://github.com/violetbuse/rocktick-python/compare/v0.12.1...v0.13.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([611dffb](https://github.com/violetbuse/rocktick-python/commit/611dffb51dedc5e49697936e3e261d0bf7bb709d))
+
 ## 0.12.1 (2026-07-14)
 
 Full Changelog: [v0.12.0...v0.12.1](https://github.com/violetbuse/rocktick-python/compare/v0.12.0...v0.12.1)
